@@ -1,0 +1,7 @@
+[build]
+  command = "ng build"
+  publish = "dist/madrasa/browser"
+
+[[plugins]]
+  package = "@netlify/plugin-angular-universal"
+  enabled = false
