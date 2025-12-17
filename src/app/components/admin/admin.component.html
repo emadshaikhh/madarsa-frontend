@@ -1,0 +1,66 @@
+<div class="admin-wrapper">
+
+    <div class="login-card" *ngIf="!isAuthenticated">
+        <div class="icon-circle">🔒</div>
+        <h2>Admin Access</h2>
+        <p>Please enter the security password to view student data.</p>
+        
+        <div class="password-wrapper">
+            <input [type]="showPassword ? 'text' : 'password'" 
+                   [(ngModel)]="enteredPassword" 
+                   placeholder="Enter Password"
+                   (keyup.enter)="attemptLogin()">
+            
+            <span class="eye-icon" (click)="togglePassword()" title="Toggle Password Visibility">
+                
+                <svg *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+
+                <svg *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07-2.3 2.3"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+
+            </span>
+        </div>
+
+        <button (click)="attemptLogin()">Unlock Dashboard</button>
+
+        <p class="error-msg" *ngIf="loginError">Incorrect Password!</p>
+    </div>
+
+    <div class="dashboard-container" *ngIf="isAuthenticated">
+        <div class="dashboard-header">
+            <h2>🎓 Student Applications</h2>
+            <span class="badge">{{ studentList.length }} Students</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Father's Name</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of studentList; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td><strong>{{ student.studentName }}</strong></td>
+                        <td>{{ student.fatherName }}</td>
+                        <td>{{ student.contact }}</td>
+                        <td><span class="tag">{{ student.class }}</span></td>
+                        <td>{{ student.date | date:'mediumDate' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

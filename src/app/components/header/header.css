@@ -1,0 +1,159 @@
+/* --- 1. HEADER (Title Part) --- */
+header {
+    background: #0d47a1;
+    color: white;
+    padding: 0.5rem 0;
+    text-align: center;
+    
+    /* STICKY LOGIC HERE */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    
+    /* MOVED THE GOLDEN BORDER HERE */
+    border-bottom: 3px solid #ffd700; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header-top p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* --- 2. NAVIGATION BAR (Menu Part) --- */
+nav {
+    background: #0a3d8f;
+    /* Removed border-top because we moved it to the header bottom */
+    width: 100%;
+    /* Position is default (static), so it will SCROLL AWAY */
+}
+
+/* --- 3. NAV CONTAINER & LINKS --- */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-content a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-content a:hover, 
+.nav-content a.active {
+    background: #ffd700;
+    color: #0a3d8f;
+    border-radius: 4px;
+}
+
+/* --- 4. MOBILE STYLES --- */
+.menu-toggle {
+    display: none; 
+}
+
+/* --- MOBILE STYLES (Phones & Tablets) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Shrink the Title */
+    .header-top h1 { 
+        font-size: 1.2rem; /* Much smaller to fit */
+        padding: 0 10px;
+    }
+    
+    .header-top p {
+        font-size: 0.8rem;
+    }
+
+    /* 2. Align the Navbar items */
+    .nav-container {
+        justify-content: flex-end; /* Push hamburger to right */
+        padding: 0.5rem 1rem;
+    }
+
+    /* 3. The Hamburger Button Styling */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px; /* Slightly taller for easier tapping */
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1100; /* Ensure it's above the menu */
+    }
+
+    .menu-toggle .bar {
+        height: 3px;
+        width: 100%;
+        background-color: white; /* Make sure bars are visible on blue */
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    /* 4. The Dropdown Menu (Hidden by default) */
+    .nav-content {
+        display: none; 
+        position: absolute;
+        top: 100%; /* Push it right below the yellow line */
+        left: 0;
+        width: 100%;
+        background-color: #0a3d8f; 
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    /* 5. Show Menu when Active */
+    .nav-content.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-content a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        font-size: 1.1rem; /* Bigger text for thumbs */
+    }
+  
+    /* Animation for the slide down */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+/* Make the Admin link stand out */
+.admin-link {
+    color: #ffeb3b; /* Bright Yellow */
+    font-weight: bold;
+}
+
+/* Optional: Make it glow when you hover */
+.admin-link:hover {
+    color: #fff176; /* Lighter Yellow */
+    text-shadow: 0 0 5px #ffeb3b;
+}

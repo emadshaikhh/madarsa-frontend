@@ -1,0 +1,29 @@
+<header>
+    <div class="header-top">
+        <h1>MADARSA ISLAMIA MAKTAB</h1>
+        <p>Islamic Education & Character Building Center</p>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <button class="menu-toggle" (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-content" [class.active]="isMenuOpen">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                (click)="closeMenu()">Home</a>
+            <a routerLink="/courses" routerLinkActive="active" (click)="closeMenu()">Courses</a>
+            <a routerLink="/timetable" routerLinkActive="active" (click)="closeMenu()">Timetable</a>
+            <a routerLink="/teacher" routerLinkActive="active" (click)="closeMenu()">Teachers</a>
+            <a routerLink="/teacher" routerLinkActive="active" (click)="closeMenu()">Teachers</a>
+            <a routerLink="/admission" routerLinkActive="active" (click)="closeMenu()">Admission</a>
+            <a routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()">Gallery</a>
+            <a routerLink="/donate" routerLinkActive="active" (click)="closeMenu()">Donate</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+            <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+            <a routerLink="/admin" class="admin-link" (click)="closeMenu()">Admin</a>
+        </div>

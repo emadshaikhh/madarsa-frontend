@@ -1,0 +1,98 @@
+/* Hero Section with Image Background */
+.hero {
+    /* Change from 0.85 to 0.7 for a more transparent blue.
+       You can try 0.6 for even more image visibility.
+    */
+    background: linear-gradient(rgba(12, 12, 12, 0.7), rgb(2, 2, 2)),
+                url('/hero-bg.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: white;
+    /* Increased padding for a taller, more grand look */
+    padding: 8rem 2rem; 
+    text-align: center;
+}
+
+/* Make the heading pop out more */
+.hero h2 {
+    font-size: 3.5rem; /* Slightly bigger font */
+    margin-bottom: 1rem;
+    /* Stronger shadow for better readability against the image */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
+    font-weight: 700;
+}
+
+/* Make the paragraph text easier to read */
+.hero p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    /* Stronger shadow */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    line-height: 1.6;
+}
+
+/* --- HOME PAGE MOBILE FIXES --- */
+@media (max-width: 768px) {
+    
+    /* Adjust Hero Section */
+    .hero {
+        padding: 4rem 1rem; /* Less padding */
+        background-attachment: scroll; /* Fixes scrolling glitches on some phones */
+    }
+
+    .hero h2 {
+        font-size: 2rem; /* Smaller heading */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Stack the buttons vertically if screen is very narrow */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Fix the Prayer Widget Width */
+    #prayer-times iframe {
+        height: 400px; /* Adjust height if needed */
+    }
+}
+
+/* --- HOME PAGE MOBILE FIXES --- */
+@media (max-width: 768px) {
+    
+    /* Adjust Hero Section */
+    .hero {
+        padding: 4rem 1rem; /* Less padding */
+        background-attachment: scroll; /* Fixes scrolling glitches on some phones */
+    }
+
+    .hero h2 {
+        font-size: 2rem; /* Smaller heading */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Stack the buttons vertically if screen is very narrow */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Fix the Prayer Widget Width */
+    #prayer-times iframe {
+        height: 400px; /* Adjust height if needed */
+    }
+}

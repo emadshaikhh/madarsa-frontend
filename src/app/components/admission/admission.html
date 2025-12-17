@@ -1,0 +1,66 @@
+<section id="admission">
+    <h2>Admission Form</h2>
+    <div class="admission-form">
+        <h3 style="color: #0d47a1; margin-bottom: 1rem; text-align: center;">Apply for Admission</h3>
+        
+        <form [formGroup]="admissionForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group">
+                <label>Student's Full Name *</label>
+                <input type="text" formControlName="studentName" placeholder="Enter student's full name">
+                <small class="error" *ngIf="admissionForm.get('studentName')?.touched && admissionForm.get('studentName')?.invalid">Name is required</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Date of Birth *</label>
+                <input type="date" formControlName="dob">
+            </div>
+            
+            <div class="form-group">
+                <label>Father's Name *</label>
+                <input type="text" formControlName="fatherName" placeholder="Enter father's name">
+            </div>
+
+            <div class="form-group">
+                <label>Gender *</label>
+                <select formControlName="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Contact Number *</label>
+                <input type="tel" formControlName="contact" placeholder="Enter 10-digit number">
+                <small class="error" *ngIf="admissionForm.get('contact')?.touched && admissionForm.get('contact')?.invalid">Must be 10 digits</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Address *</label>
+                <textarea rows="3" formControlName="address" placeholder="Enter complete address"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Course Selection *</label>
+                <select formControlName="class">
+                    <option value="">Select a course</option>
+                    <option value="nazra">Quran Nazra</option>
+                    <option value="hifz">Quran Hifz</option>
+                    <option value="islamic">Islamic Studies</option>
+                    <option value="arabic">Arabic Language</option>
+                    <option value="weekend">Weekend Classes</option>
+                </select>
+            </div>
+            
+            <p *ngIf="successMessage" style="color: green; text-align: center; font-weight: bold;">{{ successMessage }}</p>
+
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </div>
+        </form>
+
+        <p style="text-align: center; color: #666; margin-top: 1rem;">
+            <strong>Note:</strong> Admission is free. Classes start every month. Required documents: Birth certificate, Recent photograph, Aadhar card copy (if available)
+        </p>
+    </div>
+</section>

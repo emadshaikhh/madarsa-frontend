@@ -1,0 +1,192 @@
+/* --- 🌍 MAIN LAYOUT --- */
+.admin-wrapper {
+    min-height: 80vh;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- 🔒 LOGIN CARD STYLES --- */
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.icon-circle {
+    font-size: 40px;
+    background: #e3f2fd;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.login-card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.login-card button:hover {
+    background-color: #004494;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* --- 👁️ PASSWORD INPUT & EYE ICON --- */
+.password-wrapper {
+    position: relative;
+    /* Allows absolute positioning of the eye */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Input Styling */
+.password-wrapper input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 45px;
+    /* Extra space so text doesn't hit the eye */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.password-wrapper input:focus {
+    border-color: #0056b3;
+}
+
+/* The Eye Button */
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centers it vertically */
+    cursor: pointer;
+    display: flex;
+    /* Keeps the SVG aligned */
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    padding: 5px;
+    /* Clickable area */
+}
+
+/* SVG Color Styling */
+.eye-icon svg {
+    stroke: #888;
+    /* Professional Gray */
+    transition: stroke 0.3s ease;
+}
+
+.eye-icon:hover svg {
+    stroke: #333;
+    /* Darker on hover */
+}
+
+
+/* --- 🎓 DASHBOARD STYLES --- */
+.dashboard-container {
+    width: 90%;
+    max-width: 1000px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+.badge {
+    background: #0056b3;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.styled-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+
+.styled-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tag {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Responsive Mobile Fix */
+@media (max-width: 600px) {
+    .table-responsive {
+        overflow-x: auto;
+        /* Scroll table sideways on phones */
+    }
+}
