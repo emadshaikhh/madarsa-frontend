@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AdmissionService {
 
-  private apiUrl = 'https://madarsa-backend-zlcf.onrender.com/';
+  private apiUrl = 'https://madarsa-backend-zlcf.onrender.com/api/admission';
 
   constructor(private http: HttpClient) { }
 
